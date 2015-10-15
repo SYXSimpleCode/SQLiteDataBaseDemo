@@ -1,0 +1,64 @@
+﻿/*sqlite3 脚本*/
+
+一,新建数据库-user
+1，新建库
+sqlite3 sqlite_db.db
+
+2，新建表 user
+create table user 
+(id int primarykey not null,
+ code nvarchar(50),
+ orgid int,
+ name nvarchar(50),
+ gender nvarchar(8),
+ birthday nvarchar(50),
+ u_validate int,
+ u_registtime varchar(50)
+);
+insert into user values(1,1000,1,'test1','男','1990-1-1',1,'2015-10-14');
+insert into user values(2,1001,2,'test2','女','1992-1-1',1,'2015-10-14');
+insert into user values(3,1002,3,'test3','女','1991-1-1',1,'2015-10-14');
+insert into user values(4,1003,4,'test4','男','1991-1-1',1,'2015-10-14');
+insert into user values(5,1004,5,'test5','女','1993-1-1',1,'2015-10-14');
+insert into user values(6,1005,6,'test6','男','1995-1-1',1,'2015-10-14');
+insert into user values(7,1006,7,'test7','女','1991-1-1',1,'2015-10-14');
+insert into user values(8,1007,8,'test8','男','1991-1-1',1,'2015-10-14');
+insert into user values(9,1008,9,'test9','女','1992-1-1',1,'2015-10-14');
+insert into user values(10,1009,10,'test1','男','1992-1-1',1,'2015-10-14');
+3,新建表 org
+create table org
+(
+ id int primarykey not null,
+ code nvarchar(50),
+ orgname nvarchar(50),
+ u_validate int,
+ u_registtime varchar(50)
+);
+insert into org values(1,1000,'org1',1,'2015-10-14');
+insert into org values(2,1001,'org2',1,'2015-10-14');
+insert into org values(3,1002,'org3',1,'2015-10-14');
+insert into org values(4,1003,'org4',1,'2015-10-14');
+insert into org values(5,1004,'org5',1,'2015-10-14');
+insert into org values(6,1005,'org6',1,'2015-10-14');
+insert into org values(7,1006,'org7',1,'2015-10-14');
+insert into org values(8,1007,'org8',1,'2015-10-14');
+insert into org values(9,1008,'org9',1,'2015-10-14');
+insert into org values(10,1009,'org10',1,'2015-10-14');
+
+二，新建数据库-org
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
