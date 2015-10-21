@@ -1,18 +1,14 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SQLiteConsole_Local
 {
-
     /// <summary>
     /// 通用分页信息
     /// </summary>
     public class PageInfo
     {
         private int _Page = 1;
+
         public int pageIndex
         {
             get
@@ -26,6 +22,7 @@ namespace SQLiteConsole_Local
         }
 
         private int _PageSize = 20;
+
         public int pageSize
         {
             get
@@ -41,6 +38,7 @@ namespace SQLiteConsole_Local
         public int TotalCount { get; set; }
 
         private string _SortValue = null;
+
         public string sortField
         {
             get
@@ -53,8 +51,9 @@ namespace SQLiteConsole_Local
             }
         }
 
-        //页数   
+        //页数
         private int _pageCount;
+
         public Int32 PageCount
         {
             get
@@ -77,6 +76,7 @@ namespace SQLiteConsole_Local
 
         //当前页开始编号
         private int _rowStart;
+
         public Int32 RowStart
         {
             get
@@ -88,8 +88,10 @@ namespace SQLiteConsole_Local
                 _rowStart = value;
             }
         }
+
         //当前页结束编号
         private int _rowEnd;
+
         public Int32 RowEnd
         {
             get { return _rowEnd == 0 ? pageIndex * pageSize : _rowEnd; }

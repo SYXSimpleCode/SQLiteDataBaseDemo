@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Linq;
@@ -6,7 +7,6 @@ using System.Data.Linq.Mapping;
 using System.Data.SQLite;
 using System.IO;
 using System.Linq;
-using Dapper;
 using System.Reflection;
 
 namespace SQLiteConsole_Local
@@ -80,8 +80,9 @@ namespace SQLiteConsole_Local
                 throw ex;
             }
         }
+
         /// <summary>
-        /// 获取DataSet 
+        /// 获取DataSet
         /// </summary>
         /// <param name="cmdText"></param>
         /// <param name="p"></param>

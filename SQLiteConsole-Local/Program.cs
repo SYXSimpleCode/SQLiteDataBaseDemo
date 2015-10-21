@@ -18,9 +18,9 @@ namespace SQLiteConsole_Local
                         );";
             //OperationSQLite.CreateTable(createtable);
 
-           //int result1=  OperationSQLite.Add();
+            //int result1=  OperationSQLite.Add();
 
-           User u1=OperationSQLite.GetUserById(1);
+            User u1 = OperationSQLite.GetUserById(1);
         }
     }
 }

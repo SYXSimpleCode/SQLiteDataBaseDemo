@@ -1,13 +1,9 @@
-﻿using System;
+﻿using Dapper;
+using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Dapper;
-using System.Data.Common;
 using System.Data.SqlClient;
-
+using System.Linq;
 
 namespace SQLiteConsole_Local
 {
@@ -73,7 +69,6 @@ namespace SQLiteConsole_Local
             }
         }
 
-
         /// <summary>
         /// 分页方法(仅支持2012)
         /// </summary>
@@ -92,7 +87,7 @@ namespace SQLiteConsole_Local
             page.pageIndex += 1;  //MINIUI 默认起始页为0,这里每页需要加1
             int skipNum = (page.pageIndex - 1) * page.pageSize;
             string sqlPageStr = @" {3}  {0}
-                                    ORDER BY {1} 
+                                    ORDER BY {1}
                                     OFFSET {4} ROWS
 		                            FETCH NEXT {5} ROWS ONLY
                                    {2}";
@@ -124,7 +119,6 @@ namespace SQLiteConsole_Local
                 throw ex;
             }
         }
-
 
         /// <summary>
         /// 查询单个实体
@@ -222,8 +216,6 @@ namespace SQLiteConsole_Local
             cmd.CommandType = CommandType.Text;//cmdType;
             if (cmdParms != null)
             {
-
-
                 foreach (SqlParameter parameter in cmdParms)
                 {
                     if ((parameter.Direction == ParameterDirection.InputOutput || parameter.Direction == ParameterDirection.Input) &&
