@@ -67,6 +67,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChineseSpell.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="OperationSQLite.cs" />
     <Compile Include="PageFinder.cs" />
@@ -77,6 +78,7 @@
     <Compile Include="SQLiteHelper.cs" />
     <Compile Include="TestLock-LockThis.cs" />
     <Compile Include="TestLock.cs" />
+    <Compile Include="ToChineseSpell.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

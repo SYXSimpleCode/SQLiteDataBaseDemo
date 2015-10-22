@@ -26,16 +26,16 @@ namespace SQLiteConsole_Local
             {
                 throw new Exception("Nagative Balance");
             }
-            // Comment out the next line to see the effect of leaving out 
+            // Comment out the next line to see the effect of leaving out
             // the lock keyword:
             lock (thislock)
             {
                 if (balance >= amount)
                 {
                     Console.WriteLine("-------:" + System.Threading.Thread.CurrentThread.Name + "-----");
-                    Console.WriteLine(System.Threading.Thread.CurrentThread.Name+":"+"Balance before Withdrawal:" + balance);
+                    Console.WriteLine(System.Threading.Thread.CurrentThread.Name + ":" + "Balance before Withdrawal:" + balance);
                     balance = balance - amount;
-                    Console.WriteLine(System.Threading.Thread.CurrentThread.Name + ":"+"Balance after Withdrawal:" + balance);
+                    Console.WriteLine(System.Threading.Thread.CurrentThread.Name + ":" + "Balance after Withdrawal:" + balance);
                     return amount;
                 }
                 else

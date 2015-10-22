@@ -1,6 +1,5 @@
-﻿using System;
-using System.Threading;
-using SQLiteConsole_Local.Model;
+﻿using SQLiteConsole_Local.Model;
+using System;
 
 namespace SQLiteConsole_Local
 {
@@ -19,20 +18,19 @@ namespace SQLiteConsole_Local
                          u_registtime varchar(50)
                         );";
 
-
             #region 操作sqlite
 
             //OperationSQLite.CreateTable(createtable);
 
             //int result1=  OperationSQLite.Add();
 
-            #endregion
+            #endregion 操作sqlite
 
             #region dapper 操作
 
             User u1 = OperationSQLite.GetUserById(1);
 
-            #endregion
+            #endregion dapper 操作
 
             #region 线程操作 -lock
 
@@ -52,6 +50,7 @@ namespace SQLiteConsole_Local
 
             //实例2
             //在t1线程中调用LockMethod，并将deadlock设置为true,(将出现死锁)
+            /*
             TestLock_LockThis testLockLockThis =new TestLock_LockThis();
             Thread t1=new Thread(testLockLockThis.LockMethod);
             t1.Start(true);
@@ -63,12 +62,18 @@ namespace SQLiteConsole_Local
                 testLockLockThis.NotLockMethod();
                 //调用被lock的方法，并试图将deadlock解除
                 testLockLockThis.LockMethod(false);
+            }*/
 
-            }
+            #endregion 线程操作 -lock
 
+            //获取中文首字母
+            string str = "C# 获取中文大写字母,长大了,长租,长城汽车,仇姓";
 
-            #endregion
+            string spell = ToChineseSpell.GetChineseSpell(str);
 
+            Console.WriteLine(spell);
+
+            Console.WriteLine(ChineseSpell.convert(str));
 
             Console.ReadLine();
         }

@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace SQLiteConsole_Local
 {
     public class TestLock_LockThis
     {
         private bool deadlocked = true;
-        private static readonly object lockobject=new object();
+        private static readonly object lockobject = new object();
 
         //locke的代码在同一时刻只能有一个线程访问
         public void LockMethod(object o)
@@ -20,7 +16,7 @@ namespace SQLiteConsole_Local
             {
                 while (deadlocked)
                 {
-                    deadlocked = (bool) o;
+                    deadlocked = (bool)o;
                     Console.WriteLine("I am locked");
                     Thread.Sleep(500);
                 }
@@ -34,6 +30,5 @@ namespace SQLiteConsole_Local
         {
             Console.WriteLine("I am not Locked");
         }
-
     }
 }
