@@ -75,6 +75,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqliteDbHelper.cs" />
     <Compile Include="SQLiteHelper.cs" />
+    <Compile Include="TestLock-LockThis.cs" />
+    <Compile Include="TestLock.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
